@@ -1,0 +1,148 @@
+S<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MediSecure Access – Wireframe</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f6f7f9; }
+    header { background:#fff; border-bottom:1px solid #ddd; padding:12px 16px; display:flex; justify-content:space-between; }
+    .brand { font-weight:700; }
+    nav a { margin-right:10px; text-decoration:none; color:#333; }
+    .wrap { max-width: 980px; margin: 18px auto; padding: 0 16px; }
+    .card { background:#fff; border:1px solid #ddd; border-radius:10px; padding:16px; margin-bottom:14px; }
+    .row { display:flex; gap:12px; flex-wrap:wrap; }
+    .kpi { flex:1; min-width:180px; border:1px dashed #999; border-radius:10px; padding:12px; }
+    .box { border:1px dashed #999; border-radius:10px; padding:12px; }
+    .two { display:grid; grid-template-columns: 2fr 1fr; gap:12px; }
+    label { display:block; margin:10px 0 6px; }
+    input, select { width:100%; padding:10px; border:1px solid #ccc; border-radius:8px; }
+    button { padding:10px 14px; border:1px solid #333; background:#fff; border-radius:8px; cursor:pointer; }
+    table { width:100%; border-collapse:collapse; }
+    th, td { border:1px dashed #999; padding:10px; text-align:left; }
+    .hidden { display:none; }
+    .pill { border:1px dashed #999; border-radius:999px; padding:6px 10px; display:inline-block; }
+    .warn { border:1px dashed #999; border-radius:10px; padding:10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">MediSecure Access</div>
+    <div>
+      <nav>
+        <a href="#login">Login</a>
+        <a href="#create">Account Request</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#remote">Remote Access</a>
+        <a href="#logs">Portal Logs</a>
+        <a href="#admin">Billing/Admin</a>
+      </nav>
+      <span class="pill">Welcome, User</span>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <section id="login" class="card">
+      <h2>Login Page (Wireframe)</h2>
+      <label>Email</label>
+      <input placeholder="name@hospital.org" />
+      <label>Password</label>
+      <input placeholder="••••••••" />
+      <p><a href="#login">Forgot password?</a></p>
+      <button>Login</button>
+      <p><a href="#create">Request New Account</a></p>
+    </section>
+
+    <section id="create" class="card">
+      <h2>Account Creation Request (Wireframe)</h2>
+      <label>Full Name</label>
+      <input placeholder="Full name" />
+      <label>Email</label>
+      <input placeholder="name@hospital.org" />
+      <label>Department</label>
+      <select>
+        <option>Clinical</option>
+        <option>Billing</option>
+        <option>Admin</option>
+        <option>IT</option>
+      </select>
+      <label>MFA Preference</label>
+      <div class="box">
+        <input type="radio" name="mfa" /> SMS &nbsp;&nbsp;
+        <input type="radio" name="mfa" /> Authenticator App
+      </div>
+      <br />
+      <button>Submit Request</button>
+    </section>
+
+    <section id="dashboard" class="card">
+      <h2>Landing Page – Overview Dashboard (Wireframe)</h2>
+      <div class="row">
+        <div class="kpi"><strong>MFA Adoption</strong><br><span style="font-size:28px;">76%</span></div>
+        <div class="kpi"><strong>Risky Sign-ins</strong><br><span style="font-size:28px;">5</span></div>
+        <div class="kpi"><strong>Locked Accounts</strong><br><span style="font-size:28px;">2</span></div>
+      </div>
+      <div class="two" style="margin-top:12px;">
+        <div class="box">
+          <strong>Activity Feed</strong>
+          <p>8:00 AM — Alert: Multiple failed logins</p>
+          <p>7:15 AM — Notification: Account update</p>
+          <button>View All</button>
+        </div>
+        <div class="box">
+          <strong>Alerts</strong>
+          <p>High-risk login detected</p>
+          <p>Locked account requires review</p>
+          <button>See Details</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="remote" class="card">
+      <h2>Clinician Remote Access (Wireframe)</h2>
+      <div class="warn"><strong>Warning:</strong> Untrusted device connected remotely</div>
+      <div class="box" style="margin-top:12px;">
+        <strong>Device Status</strong>
+        <p>OS: Windows | Antivirus: Active | Firewall: Enabled</p>
+      </div>
+      <div class="box" style="margin-top:12px;">
+        <strong>Remote Session Details</strong>
+        <p>IP Address: 203.0.113.xx | Connected Since: 7:45 AM</p>
+        <button>End Session</button>
+      </div>
+    </section>
+
+    <section id="logs" class="card">
+      <h2>Patient Portal Access Logs (Wireframe)</h2>
+      <table>
+        <thead>
+          <tr><th>User</th><th>Time</th><th>IP Address</th><th>Risk Score</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>John D.</td><td>3:45 PM</td><td>192.168.0.5</td><td>Medium</td></tr>
+          <tr><td>Jane S.</td><td>2:20 PM</td><td>10.20.15.2</td><td>Low</td></tr>
+          <tr><td>Bob M.</td><td>11:50 AM</td><td>203.0.113.33</td><td>High</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="admin" class="card">
+      <h2>Billing & Admin Controls (Wireframe)</h2>
+      <div class="box">
+        <strong>Privileged Users</strong>
+        <p>Amanda B. — Role: <select><option>Admin</option></select></p>
+        <p>Scott H. — Role: <select><option>Billing Manager</option></select></p>
+        <p>Tim S. — Role: <select><option>HR</option></select></p>
+      </div>
+      <div class="box" style="margin-top:12px;">
+        <strong>Security Policies</strong>
+        <p>Enforce MFA for billing admins: <button>ON</button></p>
+        <p>Lock inactive accounts after 30 days: <button>ON</button></p>
+        <button>Update Policies</button>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
